@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>SUDE BETÜL KÜRKÇÜ</title>
+        <style>
+            body{
+                background-color: #999;
+                font-family: sans-serif;
+                color: white;
+            }
+            a{
+                text-decoration: none;
+                font-size: 25px;
+                padding: 5px;
+                color: white;
+            
+            }
+            table{
+                text-align: center;
+            }
+            marquee{
+                padding: 0 100px 0 100px;
+            }
+            a:hover{
+                color:  red;
+            }
+            #education .content a{
+                color: black;
+            }
+            #education .content a:hover{
+                color: red;
+            }
+            li{
+                font-size: 25px;
+                padding: 5px;
+            }
+            span{
+                font-size: 25px;
+                padding: 5px;
+            }
+            #summary{
+                text-align: center;
+                padding: 5%;
+            }
+            #summary-text{
+                padding-left: 10%;
+                padding-right: 10%;
+                background-color: #555;
+                margin: 10px 10% 0 10%;
+            
+                padding: 10px;
+                border-radius: 5%;
+            }
+            #photo{
+                border-radius: 10%;
+                border: solid 5px black;
+            }
+            .flex{
+                display: flex;
+            
+            }
+            .header{
+                border-radius: 5%;
+                background-color: #555;
+            }
+            .flex .header{
+                width: 30%;
+                height: 250px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 10px;
+            
+            
+            }
+            .content{
+                display: flex;
+                flex-direction: column;
+                height: 250px;
+                width: 70%;
+                background-color: #099;
+                border-radius: 5%;
+                justify-content: center;
+                padding-left: 40px;
+                margin: 10px;
+            
+            }
+            #contact{
+                text-align: center;
+            }
+            #contact .header{
+                margin: 10px;
+                margin-bottom: 20px;
+                height: 100px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            #contact .content{
+                display: flex;
+                flex-direction: row;
+                width: auto
+            }
+            #contact .content #instagram, #contact .content #email{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="summary">
+            <!-- Özet -->
+            <img id="photo" src="Sude.jpg" alt="">
+            <div id="summary-text">
+                <marquee behavior="" direction=""><h1>SUDE BETÜL KÜRKÇÜ</h1></marquee>
+                <p>
+                    Sude Betül Kürkçü 2001 yılında İstanbul'da doğdu. Liseyi Ataşehir Anadolu Lisesi'nde okudu. Sonrasında 2020 yılında Bandırma Onyedi Eylül Üniversitesi Yazılım Mühendisliği Bölümünü kazandı. İngilizce hazırlık sınıfını başarıyla tamamlayarak sertifika aldı. İngilizce ve Almanca dil bilgisine sahip. İlgi alanları siber güvenlik ve savunma sanayi, bilgi güvenliği ve dil çevirileri. Öğrenci no: 201505013 , Sıra no: 06
+                </p>
+            </div>
+        </div>
+        <div >
+            <div class="flex" id="education">
+                <!-- Eğitimler -->
+                <div class="header"><h1>EĞİTİMLER</h1></div>
+                <div class="content" style="background-color: rgb(255, 207, 145); color: black;">
+                    <a href="https://atasehiranadolulisesi.meb.k12.tr""> ATAŞEHİR ANADOLU LİSESİ </a>
+                    <a href="https://www.bandirma.edu.tr"">BANDIRMA ONYEDİ EYLÜL ÜNİVERSİTESİ </a>
+                </div>
+            </div>
+            <div class="flex"id="language">
+                <!-- Diller -->
+                <div class="content">
+                    <ul>
+                        <li>Türkçe(anadil)</li>
+                        <li>İngilizce(C1)</li>
+                        <li>Almanca(B2)</li>
+                    </ul>
+                </div>
+                <div class="header"><h1>DİLLER</h1></div>
+                <div>
+                </div>
+            </div>
+            <div class="flex" id="goals">
+                <!-- Hedefler -->
+                <div class="header"><h1>SERTİFİKALAR</h1></div>
+                <div class="content" style="background-color: rgb(255, 207, 145); color: black;">
+                    <span>BESADERİN - Python ile yazılıma ve yapay zekaya giriş kursu katılım sertifikası</span>
+                    <span>BAŞARISOFT - Web tasarım kursu katılım sertifikası</span>
+                </div>
+            </div>
+            <div id="contact">
+                <!-- İletişim -->
+                <div class="header"><h1>İLETİŞİM</h1></div>
+                <div class="content">
+                    <div id="instagram">
+                        <span>Instagram</span>
+                        <a href="https://www.instagram.com/sudekrkc">@sudekrkc</a>
+                    </div>
+                    <div id="email">
+                        <span>E-Mail</span>
+                        <a href="https://mail.google.com/mail/u/0/#inbox?compose=new">sudebetulkrkc@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </body>
+</html>
