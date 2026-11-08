@@ -14,7 +14,6 @@
                 font-size: 25px;
                 padding: 5px;
                 color: white;
-            
             }
             table{
                 text-align: center;
@@ -48,17 +47,17 @@
                 padding-right: 10%;
                 background-color: #555;
                 margin: 10px 10% 0 10%;
-            
                 padding: 10px;
                 border-radius: 5%;
             }
             #photo{
                 border-radius: 10%;
                 border: solid 5px black;
+                /* Fotoğrafın çok büyük çıkmaması için genişlik sınırı eklendi */
+                max-width: 250px; 
             }
             .flex{
                 display: flex;
-            
             }
             .header{
                 border-radius: 5%;
@@ -71,8 +70,6 @@
                 align-items: center;
                 justify-content: center;
                 margin: 10px;
-            
-            
             }
             .content{
                 display: flex;
@@ -84,7 +81,6 @@
                 justify-content: center;
                 padding-left: 40px;
                 margin: 10px;
-            
             }
             #contact{
                 text-align: center;
@@ -100,7 +96,7 @@
             #contact .content{
                 display: flex;
                 flex-direction: row;
-                width: auto
+                width: auto;
             }
             #contact .content #instagram, #contact .content #email{
                 display: flex;
@@ -113,48 +109,48 @@
     </head>
     <body>
         <div id="summary">
-            <!-- Özet -->
-            <img id="photo" src="Sude.jpg" alt="">
+            <!-- Summary -->
+            <img id="photo" src="Sude.jpg" alt="Sude Betül Kürkçü Photo">
             <div id="summary-text">
                 <marquee behavior="" direction=""><h1>SUDE BETÜL KÜRKÇÜ</h1></marquee>
                 <p>
-                    Sude Betül Kürkçü 2001 yılında İstanbul'da doğdu. Liseyi Ataşehir Anadolu Lisesi'nde okudu. Sonrasında 2020 yılında Bandırma Onyedi Eylül Üniversitesi Yazılım Mühendisliği Bölümünü kazandı. İngilizce hazırlık sınıfını başarıyla tamamlayarak sertifika aldı. İngilizce ve Almanca dil bilgisine sahip. İlgi alanları siber güvenlik ve savunma sanayi, bilgi güvenliği ve dil çevirileri. Öğrenci no: 201505013 , Sıra no: 06
+                    Sude Betül Kürkçü was born in Istanbul in 2001. She attended Ataşehir Anatolian High School. Later, in 2020, she enrolled in the Software Engineering Department at Bandırma Onyedi Eylül University. She successfully completed the English preparatory class and received a certificate. She has knowledge of English and German. Her areas of interest include cyber security, defense industry, information security, and language translation. Student ID: 201505013, Class No: 06
                 </p>
             </div>
         </div>
-        <div >
+        <div>
             <div class="flex" id="education">
-                <!-- Eğitimler -->
-                <div class="header"><h1>EĞİTİMLER</h1></div>
+                <!-- Education -->
+                <div class="header"><h1>EDUCATION</h1></div>
                 <div class="content" style="background-color: rgb(255, 207, 145); color: black;">
-                    <a href="https://atasehiranadolulisesi.meb.k12.tr""> ATAŞEHİR ANADOLU LİSESİ </a>
-                    <a href="https://www.bandirma.edu.tr"">BANDIRMA ONYEDİ EYLÜL ÜNİVERSİTESİ </a>
+                    <a href="https://atasehiranadolulisesi.meb.k12.tr">ATAŞEHİR ANATOLIAN HIGH SCHOOL</a>
+                    <a href="https://www.bandirma.edu.tr">BANDIRMA ONYEDİ EYLÜL UNIVERSITY</a>
                 </div>
             </div>
-            <div class="flex"id="language">
-                <!-- Diller -->
+            <div class="flex" id="language">
+                <!-- Languages -->
                 <div class="content">
                     <ul>
-                        <li>Türkçe(anadil)</li>
-                        <li>İngilizce(C1)</li>
-                        <li>Almanca(B2)</li>
+                        <li>Turkish (Native)</li>
+                        <li>English (C1)</li>
+                        <li>German (B2)</li>
                     </ul>
                 </div>
-                <div class="header"><h1>DİLLER</h1></div>
+                <div class="header"><h1>LANGUAGES</h1></div>
                 <div>
                 </div>
             </div>
             <div class="flex" id="goals">
-                <!-- Hedefler -->
-                <div class="header"><h1>SERTİFİKALAR</h1></div>
+                <!-- Certificates -->
+                <div class="header"><h1>CERTIFICATES</h1></div>
                 <div class="content" style="background-color: rgb(255, 207, 145); color: black;">
-                    <span>BESADERİN - Python ile yazılıma ve yapay zekaya giriş kursu katılım sertifikası</span>
-                    <span>BAŞARISOFT - Web tasarım kursu katılım sertifikası</span>
+                    <span>BESADERİN - Introduction to Software and Artificial Intelligence with Python Certificate of Participation</span>
+                    <span>BAŞARISOFT - Web Design Course Certificate of Participation</span>
                 </div>
             </div>
             <div id="contact">
-                <!-- İletişim -->
-                <div class="header"><h1>İLETİŞİM</h1></div>
+                <!-- Contact -->
+                <div class="header"><h1>CONTACT</h1></div>
                 <div class="content">
                     <div id="instagram">
                         <span>Instagram</span>
@@ -162,12 +158,10 @@
                     </div>
                     <div id="email">
                         <span>E-Mail</span>
-                        <a href="https://mail.google.com/mail/u/0/#inbox?compose=new">sudebetulkrkc@gmail.com</a>
+                        <a href="mailto:sudebetulkrkc@gmail.com">sudebetulkrkc@gmail.com</a>
                     </div>
                 </div>
             </div>
         </div>
-
-
     </body>
 </html>
