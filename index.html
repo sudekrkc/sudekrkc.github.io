@@ -1,260 +1,361 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-width=1.0">
-        <title>SUDE BETÜL KÜRKÇÜ | Portfolio</title>
-        <style>
-            body {
-                background-color: #2c3e50; /* Daha modern koyu lacivert/gri tonu */
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                color: #ecf0f1;
-                margin: 0;
-                padding: 20px;
-                line-height: 1.6;
-            }
-            a {
-                text-decoration: none;
-                font-size: 22px;
-                padding: 10px;
-                color: #ecf0f1;
-                transition: color 0.3s ease; /* Hover için yumuşak geçiş */
-            }
-            a:hover {
-                color: #e74c3c; /* Hoş bir kırmızı tonu */
-            }
-            ul {
-                list-style-type: none; /* Madde işaretlerini kaldırır */
-                padding: 0;
-                margin: 0;
-            }
-            li {
-                font-size: 22px;
-                padding: 8px 0;
-                border-bottom: 1px solid rgba(255,255,255,0.2);
-            }
-            li:last-child {
-                border-bottom: none;
-            }
-            span {
-                font-size: 20px;
-                padding: 10px 0;
-                display: block; /* Alt alta düzgün durması için */
-                border-bottom: 1px dashed rgba(0,0,0,0.2);
-            }
-            span:last-child {
-                border-bottom: none;
-            }
-            
-            /* Özet Bölümü */
-            #summary {
-                text-align: center;
-                padding: 40px 5%;
-                margin-bottom: 30px;
-            }
-            #summary-text {
-                padding: 30px;
-                background-color: #34495e;
-                margin: 20px auto 0 auto;
-                max-width: 800px;
-                border-radius: 15px;
-                box-shadow: 0 10px 20px rgba(0,0,0,0.3); /* Derinlik katar */
-            }
-            h1 {
-                margin: 0 0 15px 0;
-                letter-spacing: 2px;
-            }
-            p {
-                font-size: 18px;
-                text-align: justify;
-            }
-            
-            /* Fotoğraf Düzenlemesi (Kare ve Kesilmiş Görünüm) */
-            #photo {
-                border-radius: 15px;
-                border: 4px solid #ecf0f1;
-                width: 200px; /* Genişlik küçültüldü */
-                height: 200px; /* Kare olması için yükseklik eşitlendi */
-                object-fit: cover; /* Resmi ezmeden, kare alana sığacak şekilde ortalar ve keser */
-                object-position: top; /* Resmin üst/yüz kısmına odaklanır, altı keser */
-                box-shadow: 0 5px 15px rgba(0,0,0,0.4);
-            }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sude Betül Kürkçü | Software Engineer</title>
+    <!-- Modern Yazı Tipi (Google Fonts) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #0f172a; /* Derin Gece Mavisi/Siyah */
+            --card-bg: rgba(30, 41, 59, 0.7); /* Transparan Kart Arka Planı */
+            --primary: #3b82f6; /* Neon Mavi */
+            --secondary: #8b5cf6; /* Neon Mor */
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
 
-            /* Esnek Kutu (Flex) Yapıları */
-            .flex {
-                display: flex;
-                max-width: 1000px;
-                margin: 0 auto 30px auto;
-                gap: 20px; /* Kutular arası boşluk */
-            }
-            
-            /* Ortak Başlık (Sol Taraf) */
-            .flex .header {
-                width: 30%;
-                background-color: #34495e;
-                border-radius: 15px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-                transition: transform 0.3s ease;
-            }
-            .flex .header:hover {
-                transform: translateY(-5px); /* Üzerine gelince hafif yukarı kalkar */
-            }
-            .flex .header h1 {
-                margin: 0;
-                font-size: 24px;
-            }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-            /* Ortak İçerik (Sağ Taraf) */
-            .content {
-                display: flex;
-                flex-direction: column;
-                width: 70%;
-                background-color: #16a085; /* Hoş bir turkuaz/yeşil tonu */
-                border-radius: 15px;
-                justify-content: center;
-                padding: 30px 40px;
-                box-sizing: border-box;
-                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            }
+        body {
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.15) 0px, transparent 50%);
+            background-attachment: fixed;
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-main);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
 
-            /* Özel İçerik Renklendirmeleri */
-            #education .content, #experience .content, #goals .content {
-                background-color: #f39c12; /* Sıcak bir turuncu/sarı */
-                color: #2c3e50;
-            }
-            #education .content a, #experience .content span, #goals .content span {
-                color: #2c3e50;
-                font-weight: bold;
-            }
-            #education .content a:hover {
-                color: white;
-            }
-            
-            #language .content {
-                background-color: #2980b9; /* Canlı bir mavi */
-            }
+        /* Ana Konteyner */
+        .container {
+            max-width: 1100px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            animation: fadeIn 1s ease-out;
+        }
 
-            /* İletişim Bölümü */
-            #contact {
-                max-width: 1000px;
-                margin: 0 auto;
-                text-align: center;
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: repeat(3, 1fr);
             }
-            #contact .header {
-                background-color: #34495e;
-                border-radius: 15px;
-                height: 80px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin-bottom: 20px;
-                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            .profile-card {
+                grid-column: span 3;
             }
-            #contact .header h1 { margin: 0; font-size: 24px; }
-            
-            #contact .content {
-                display: flex;
+            .experience-card, .education-card {
+                grid-column: span 2;
+            }
+        }
+
+        /* Glassmorphism Kart Tasarımı */
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 30px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* 3D Etkileşimli Hover Efekti */
+        .card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: rgba(139, 92, 246, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(59, 130, 246, 0.2);
+        }
+
+        /* Profil Bölümü */
+        .profile-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .profile-content {
                 flex-direction: row;
-                width: 100%;
-                background-color: transparent;
-                box-shadow: none;
-                padding: 0;
-                gap: 20px;
+                text-align: left;
             }
-            #contact .content #instagram, #contact .content #email {
-                flex: 1;
-                background-color: #8e44ad; /* Mor tonu */
-                border-radius: 15px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                padding: 40px 20px;
-                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-                transition: transform 0.3s ease;
-            }
-            #contact .content #instagram:hover, #contact .content #email:hover {
-                transform: translateY(-5px);
-            }
-            #contact .content span {
-                font-size: 24px;
-                font-weight: bold;
-                border: none;
-                padding-bottom: 5px;
-            }
-        </style>
-    </head>
-    <body>
-        <div id="summary">
-            <!-- Summary -->
-            <img id="photo" src="Sude.jpg" alt="Sude Betül Kürkçü Photo">
-            <div id="summary-text">
-                <h1>SUDE BETÜL KÜRKÇÜ</h1>
-                <p>
-                    Sude Betül Kürkçü was born in Istanbul in 2001. She attended Ataşehir Anatolian High School. Later, in 2020, she enrolled in the Software Engineering Department at Bandırma Onyedi Eylül University. She successfully completed the English preparatory class and received a certificate. She has knowledge of English and German. Her areas of interest include cyber security, defense industry, information security, and language translation.
-                    <br><br>
-                    <strong>Student ID:</strong> 201505013 | <strong>Class No:</strong> 06
-                </p>
+        }
+
+        .profile-image-container {
+            position: relative;
+            width: 180px;
+            height: 180px;
+            flex-shrink: 0;
+        }
+
+        .profile-image-container::before {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            z-index: -1;
+            animation: spin 4s linear infinite;
+        }
+
+        #photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 50%;
+            border: 4px solid var(--bg-color);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #fff, var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 5px;
+        }
+
+        .title {
+            color: var(--primary);
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Bölüm Başlıkları */
+        h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2::before {
+            content: '';
+            display: block;
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+        }
+
+        /* Liste ve İçerik Düzenleri */
+        ul {
+            list-style: none;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 20px;
+            border-left: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--secondary);
+            box-shadow: 0 0 10px var(--secondary);
+        }
+
+        .timeline-item h3 {
+            font-size: 1.1rem;
+            color: var(--text-main);
+        }
+
+        .timeline-item span {
+            display: block;
+            color: var(--primary);
+            font-size: 0.85rem;
+            margin-bottom: 5px;
+        }
+
+        .pill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .pill {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .pill:hover {
+            background: rgba(59, 130, 246, 0.2);
+            border-color: var(--primary);
+            color: #fff;
+        }
+
+        /* İletişim Butonları */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+        }
+
+        /* Animasyonlar */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Profil Kartı (Tam Genişlik) -->
+        <div class="card profile-card">
+            <div class="profile-content">
+                <div class="profile-image-container">
+                    <img id="photo" src="Sude.jpg" alt="Sude Betül Kürkçü">
+                </div>
+                <div class="bio">
+                    <h1>SUDE BETÜL KÜRKÇÜ</h1>
+                    <div class="title">Software Engineer</div>
+                    <p>
+                        Born in Istanbul, 2001. Enrolled in the Software Engineering Department at Bandırma Onyedi Eylül University in 2020. Highly interested in backend architectures, cyber security, defense industry, and information security. Always eager to build efficient, scalable, and secure software solutions.
+                    </p>
+                    <p style="margin-top: 10px; font-size: 0.8rem;">
+                        Student ID: 201505013 &nbsp;|&nbsp; Class No: 06
+                    </p>
+                </div>
             </div>
         </div>
 
-        <div>
-            <div class="flex" id="experience">
-                <!-- Experience -->
-                <div class="header"><h1>EXPERIENCE</h1></div>
-                <div class="content">
-                    <span><strong>Software Developer</strong> | ATÜ Duty Free (Current)</span>
-                    <span style="font-size: 16px; font-weight: normal; border: none; padding-top: 0;">Developing and maintaining software solutions, focusing on backend integration, operational efficiency, and user experience.</span>
-                </div>
-            </div>
-
-            <div class="flex" id="education">
-                <!-- Education -->
-                <div class="header"><h1>EDUCATION</h1></div>
-                <div class="content">
-                    <a href="https://www.bandirma.edu.tr" target="_blank">BANDIRMA ONYEDİ EYLÜL UNIVERSITY</a>
-                    <a href="https://atasehiranadolulisesi.meb.k12.tr" target="_blank">ATAŞEHİR ANATOLIAN HIGH SCHOOL</a>
-                </div>
-            </div>
-
-            <div class="flex" id="language">
-                <!-- Languages -->
-                <div class="content">
-                    <ul>
-                        <li>Turkish (Native)</li>
-                        <li>English (C1)</li>
-                        <li>German (B2)</li>
-                    </ul>
-                </div>
-                <div class="header"><h1>LANGUAGES</h1></div>
-            </div>
-
-            <div class="flex" id="goals">
-                <!-- Certificates -->
-                <div class="header"><h1>CERTIFICATES</h1></div>
-                <div class="content">
-                    <span><strong>BESADERİN</strong> - Introduction to Software and Artificial Intelligence with Python Certificate of Participation</span>
-                    <span><strong>BAŞARISOFT</strong> - Web Design Course Certificate of Participation</span>
-                </div>
-            </div>
-
-            <div id="contact">
-                <!-- Contact -->
-                <div class="header"><h1>CONTACT</h1></div>
-                <div class="content">
-                    <div id="instagram">
-                        <span>Instagram</span>
-                        <a href="https://www.instagram.com/sudekrkc" target="_blank">@sudekrkc</a>
-                    </div>
-                    <div id="email">
-                        <span>E-Mail</span>
-                        <a href="mailto:sudebetulkrkc@gmail.com">sudebetulkrkc@gmail.com</a>
-                    </div>
-                </div>
+        <!-- Deneyim Kartı -->
+        <div class="card experience-card">
+            <h2>Experience</h2>
+            <div class="timeline-item">
+                <h3>Software Developer</h3>
+                <span>ATÜ Duty Free &nbsp;|&nbsp; Current</span>
+                <p>Developing and maintaining software solutions, focusing on backend integration, operational efficiency, and user experience within the aviation retail sector.</p>
             </div>
         </div>
-    </body>
+
+        <!-- Diller Kartı -->
+        <div class="card">
+            <h2>Languages</h2>
+            <div class="pill-list">
+                <div class="pill">Turkish (Native)</div>
+                <div class="pill">English (C1)</div>
+                <div class="pill">German (B2)</div>
+            </div>
+        </div>
+
+        <!-- Eğitim Kartı -->
+        <div class="card education-card">
+            <h2>Education</h2>
+            <div class="timeline-item">
+                <h3>Bandırma Onyedi Eylül University</h3>
+                <span>Software Engineering &nbsp;|&nbsp; 2020 - Present</span>
+                <p>Successfully completed the English preparatory class with a certificate. Focusing on modern software development methodologies and system security.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>Ataşehir Anatolian High School</h3>
+                <span>High School Diploma</span>
+            </div>
+        </div>
+
+        <!-- İlgi Alanları / Beceriler Kartı -->
+        <div class="card">
+            <h2>Interests</h2>
+            <div class="pill-list">
+                <div class="pill">Cyber Security</div>
+                <div class="pill">Defense Industry</div>
+                <div class="pill">Information Security</div>
+                <div class="pill">Backend Integration</div>
+                <div class="pill">Language Translation</div>
+            </div>
+        </div>
+
+        <!-- Sertifikalar Kartı -->
+        <div class="card experience-card">
+            <h2>Certificates</h2>
+            <ul style="display: flex; flex-direction: column; gap: 15px;">
+                <li style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px;">
+                    <strong style="color: var(--text-main);">BESADERİN</strong><br>
+                    <span style="color: var(--text-muted); font-size: 0.9rem;">Introduction to Software and Artificial Intelligence with Python</span>
+                </li>
+                <li>
+                    <strong style="color: var(--text-main);">BAŞARISOFT</strong><br>
+                    <span style="color: var(--text-muted); font-size: 0.9rem;">Web Design Course Certificate of Participation</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- İletişim Kartı -->
+        <div class="card">
+            <h2>Contact</h2>
+            <div class="contact-grid">
+                <a href="mailto:sudebetulkrkc@gmail.com" class="btn">Email Me</a>
+                <a href="https://www.instagram.com/sudekrkc" target="_blank" class="btn">Instagram Profile</a>
+            </div>
+        </div>
+    </div>
+
+</body>
 </html>
